@@ -1,0 +1,91 @@
+SELECT
+wojewodztwo,
+miejscowosc,
+szkola,
+COUNT(pytanie1) AS `COUNT(pytanie1)`,
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE 'opolskie' )*100) AS `proc(pytanie1)opolskie`,
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE ' dolnośląskie' )*100) AS `proc(pytanie1)dolnośląskie`,
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE ' kujawsko-pomorskie' )*100) AS `proc(pytanie1)kujawsko-pomorskie`,
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE ' lubelskie' )*100) AS `proc(pytanie1) lubelskie`,
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE ' lubuskie' )*100) AS `proc(pytanie1) lubuskie`,
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE ' mazowieckie' )*100) AS `proc(pytanie1) mazowieckie`,
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE ' podkarpackie' )*100) AS `proc(pytanie1) podkarpackie`,
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE ' pomorskie' )*100) AS `proc(pytanie1) pomorskie`,
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE ' świętokrzyskie' )*100) AS `proc(pytanie1) świętokrzyskie`,
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE ' warmińsko-mazurskie' )*100) AS `proc(pytanie1) warmińsko-mazurskie`,
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE ' wielkopolskie' )*100) AS `proc(pytanie1) wielkopolskie`,
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE ' zachodniopomorskie' )*100) AS `proc(pytanie1) zachodniopomorskie`,
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE ' łódzkie' )*100) AS `proc(pytanie1) łódzkie`,
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE 'małopolskie' )*100) AS `proc(pytanie1)małopolskie`,
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE 'podlaskie' )*100) AS `proc(pytanie1)podlaskie`,
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE 'śląskie' )*100) AS `proc(pytanie1)śląskie`,
+pytanie1,
+
+COUNT(pytanie2a) AS `COUNT(pytanie2a)`,
+COUNT(pytanie2b) AS `COUNT(pytanie2b)`,
+COUNT(pytanie2c) AS `COUNT(pytanie2c)`,
+COUNT(pytanie2d) AS `COUNT(pytanie2d)`,
+
+COUNT(pytanie3) AS `COUNT(pytanie3)`,
+COUNT(pytanie4) AS `COUNT(pytanie4)`,
+COUNT(pytanie5) AS `COUNT(pytanie5)`,
+COUNT(pytanie6) AS `COUNT(pytanie6)`,
+COUNT(pytanie7) AS `COUNT(pytanie7)`,
+COUNT(pytanie8) AS `COUNT(pytanie8)`,
+COUNT(pytanie9) AS `COUNT(pytanie9)`,
+COUNT(pytanie10) AS `COUNT(pytanie10)`,
+COUNT(pytanie11) AS `COUNT(pytanie11)`,
+COUNT(pytanie12) AS `COUNT(pytanie12)`,
+COUNT(pytanie14) AS `COUNT(pytanie14)`,
+
+pytanie2a,
+pytanie2b,
+pytanie2c,
+pytanie2d,
+pytanie3,
+pytanie4,
+pytanie5,
+pytanie6,
+pytanie7,
+pytanie8,
+pytanie9,
+pytanie10,
+pytanie11,
+pytanie12,
+pytanie14
+FROM ankieta
+GROUP BY wojewodztwo, miejscowosc, szkola
+
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE 'kujawsko-pomorskie' )*100) AS `proc(pytanie1)kujawsko-pomorskie`,
+
+
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE 'lubelskie' )*100) AS `proc(pytanie1) lubelskie`,
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE 'lubuskie' )*100) AS `proc(pytanie1) lubuskie`,
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE 'mazowieckie' )*100) AS `proc(pytanie1) mazowieckie`,
+
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE 'podkarpackie' )*100) AS `proc(pytanie1) podkarpackie`,
+
+
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE 'pomorskie' )*100) AS `proc(pytanie1) pomorskie`,
+
+
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE 'świętokrzyskie' )*100) AS `proc(pytanie1) świętokrzyskie`,
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE 'warmińsko-mazurskie' )*100) AS `proc(pytanie1) warmińsko-mazurskie`,
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE 'wielkopolskie' )*100) AS `proc(pytanie1) wielkopolskie`,
+
+
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE 'zachodniopomorskie' )*100) AS `proc(pytanie1) zachodniopomorskie`,
+
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE 'łódzkie' )*100) AS `proc(pytanie1) łódzkie`,
+
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE 'małopolskie' )*100) AS `proc(pytanie1)małopolskie`,
+
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE 'podlaskie' )*100) AS `proc(pytanie1)podlaskie`,
+
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE 'śląskie' )*100) AS `proc(pytanie1)śląskie`,
+
+(COUNT(pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE 'opolskie' )*100) AS `proc(pytanie1)opolskie`,
+
+
+COUNT(pytanie2a,pytanie2b,pytanie2c,pytanie2d) AS `COUNT(pytanie2)`,
+(COUNT(pytanie2)/(SELECT COUNT(*) FROM ankieta WHERE miejscowosc LIKE 'Opole' )*100) AS `proc(pytanie2)Opole`,

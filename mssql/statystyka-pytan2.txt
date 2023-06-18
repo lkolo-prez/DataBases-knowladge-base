@@ -1,0 +1,70 @@
+SELECT (COUNT(a.pytanie3)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE '%mazow%' )*100) AS VALUE, COUNT(a.pytanie3) ,  a.pytanie3 AS pytanie3,a.wojewodztwo from ankieta a 
+WHERE a.wojewodztwo LIKE '%mazow%'
+GROUP BY a.pytanie3, a.wojewodztwo 
+ORDER BY COUNT(a.pytanie3) DESC;
+
+UPDATE `stats`.`ankieta` SET `wojewodztwo`='śląskie' WHERE  `wojewodztwo`=' śląskie';
+UPDATE `stats`.`ankieta` SET `miejscowosc`='Jastrzebie-Zdrój' WHERE  `miejscowosc` IN ('Jastrzebie - Zdroj','Jastrzębie - Zdrók', 'Jastrzebie zdrój', 'Jastrzebie- Zdrój','Jastrzebiebie Zdrój','Jastrzębie_Zdrój'  ) ;
+
+
+SELECT DISTINCT miejscowosc from ankieta a ORDER BY miejscowosc;  
+
+heidiSQL timesup.pl
+root
+Jasio.123
+
+
+SELECT DISTINCT szkola from ankieta a ORDER BY `szkola`;
+
+UPDATE `stats`.`ankieta` SET `miejscowosc`='Opole' WHERE  `miejscowosc` IN ('Opols','Opolu','Opolw') ;   
+
+SELECT * FROM ankieta WHERE miejscowosc LIKE 'Opole';
+SELECT DISTINCT szkola from ankieta a ORDER BY szkola;
+
+
+SELECT * from ankieta WHERE szkola LIKE 'Zespół Szkół Elektrycznych im. Tadeusza Kościuszki';   
+
+
+
+SELECT (COUNT(a.pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE miejscowosc LIKE 'Opole' )*100) AS VALUE, COUNT(a.pytanie1) ,  a.pytanie1 AS pytanie1,a.miejscowosc from ankieta a 
+WHERE a.miejscowosc LIKE 'Opole'
+GROUP BY a.pytanie1, a.miejscowosc 
+ORDER BY COUNT(a.pytanie1) DESC;
+
+SELECT (COUNT(a.pytanie3)/(SELECT COUNT(*) FROM ankieta WHERE miejscowosc LIKE 'Opole' )*100) AS VALUE, COUNT(a.pytanie3) ,  a.pytanie3 AS pytanie3,a.miejscowosc from ankieta a 
+WHERE a.miejscowosc LIKE 'Opole'
+GROUP BY a.pytanie3, a.miejscowosc 
+ORDER BY COUNT(a.pytanie3) DESC;
+
+
+SELECT DISTINCT  from ankieta  WHERE miejscowosc LIKE 'Opole' ORDER BY szkola;
+UPDATE `stats`.`ankieta` SET `szkola`='Zespół Szkół Elektrycznych im. Tadeusza Kościuszki w Opolu' WHERE  `szkola` IN ('Publiczne Technikum Nr.5 ','ZSE im.Tadeusza Kościuszki ','zespół szkół elektrycznych w Opolu ','Zespół szkół elektrycznych w Opolu','Zespół Szkół Elektrycznych imienia Tadeusza Kościu','Zespół Szkół Elektrycznych','Zespół szkół Elektronicznych','zespół szkół elektrycznych Elektryczniak','Zespół Szkół Elektrycznych Im Tadeusza Kościuszki','Publiczne Technikum nr 5 w Opolu', 'Zespól Szkół Elektrycznych im Tadeusza Kościuszki ','Publiczne Technikum nr 5 im. Tadeusza Kościuszki w', 'Publiczne Technikum Nr 5','Technikum Elektryczne nr. 5 im. Tadeusza Kościuszk','Zepół Szkół Elektrycznych im.Tadeusza Kościuszki w'  ) ;
+
+SELECT * FROM ankieta WHERE szkola LIKE 'Zespół Szkół Elektrycznych im. Tadeusza Kościuszki w Opolu';
+
+
+UPDATE `stats`.`ankieta` SET `szkola`='Zespół Szkół Ekonomicznych im. Gen. Stefana Roweckiego "Grota" w Opolu' WHERE  `szkola` IN (' Zespół Szkół Ekonomicznych im. Gen. Stefana Rowec','Ekonom Opole','Ekonomik','Publiczne Technikum nr 3','Publiczne Technikum nr 3 w Opolu ',
+'Szkoła Ekonomiczna Technikum nr 3','Technikum ekonomiczne im. Grota Roweckiego ','Technikum Ekonomiczne im. Stefana Roweckiego "Grot','Technikum nr 3 ','Technikum nr 3 imienia gen. Stefana Roweckiego,, G','Technikum nr 3 Zespół szkół ekonomicznych im. Stef',
+'Technikum nr.4 Ekonomik Opole','Zespó szkół ekonomicznych im. Stefana Roweckiego „','Zespól Szkól Ekonomicznych ','Zespol szkol ekonomicznych im. Generala stefana gr','Zespól Szkól Ekonomicznych Im. Grota Roweckiego w ','Zespól Szkól Ekonomicznych imienia Stefana ,,Grota',
+'Zespol Szkól Ekonomicznych w Opolu','Zespól Szkół Ekonomicznych im. Stefana Roweckiego ','Zespól Szkół Ekonomicznych w Opolu','Zespół szkol ekonomicznych','Zespół szkol Ekonomicznych im.Gen. Stefana Rowecki','Zespół szkół  Ekonomicznych  w Opolu ',
+'Zespół szkół ekonomicznego im. Grota Roweckiego w ','Zespół Szkół Ekonomiczny im. Stefana Roweckiego Gr','Zespół Szkół Ekonomicznych','Zespół szkół ekonomicznych','Technikum imienia generała Stefana "Grota" Rowecki','Zespół szkół ekonomicznych','Zespół szkół ekonomicznych "Grota"',
+'Zespół szkół ekonomicznych Grota', 'Zespół Szkół Ekonomicznych im . Stefana Roweckiego','Zespół szkół ekonomicznych im gen stefana roweckie','Zespół szkół ekonomicznych im gen stefana roweckie','Zespół Szkół Ekonomicznych im gen. Stefana Rowecki',
+'Zespół Szkół Ekonomicznych im Gen. Stefana Rowecki','Zespół szkoł ekonomicznych im gen.stefana rowiecki','Zespół Szkół Ekonomicznych im Stanisława Roweckieg','Zespół Szkół Ekonomicznych im Stefana Grota Roweck','Zespół Szkół Ekonomicznych im Stefana GROTA Roweck',
+'Zespół szkół Ekonomicznych im Stefana Roweckiego "','Zespół szkół ekonomicznych im Stefana Roweckiego g','Zespół Szkół Ekonomicznych im. Gen. Stefana  Rowec','Zespół szkół ekonomicznych im. Gen. Stefana " Grot','Zespół Szkół Ekonomicznych im. Gen. Stefana "Grota', 
+'Zespół Szkół Ekonomicznych im. Gen. Stefana ,,Grot','Zespół Szkół Ekonomicznych im. gen. Stefana Roweck','Zespół Szkół Ekonomicznych im. gen. Stefana Rowick','Zespół Szkół Ekonomicznych im. Gen. Stefana Rowiec','Zespół Szkół Ekonomicznych im. Gen. Stefana „Grota',
+'Zespół szkół ekonomicznych im. Gen.Stefana Rowecki','Zespół Szkół Ekonomicznych im. Generała Stefana "G','Zespół Szkół Ekonomicznych im. Generała Stefana Ro','Zespół Szkół Ekonomicznych im. Grota Roweckiego w ','Zespół Szkół Ekonomicznych im. Grota w Opolu','Zespół szkół ekonomicznych im. Jana Roweckiego Gro',
+'Zespoł Szkół Ekonomicznych nr 3 w Opolu','Zespół Szkół Ekonomicznych Opole','Zespół szkół ekonomicznych Opole ','Zespół Szkół Ekonomicznych w Opole','Zespół Szkół Ekonomicznych w Opolu','Zespół Szkół Ekonomicznych w Opolu ','Zespół Szķół Ekonomicznych w Opolu',
+'Zespół Szkół Ekonomicznych w Opolu im. Gen. Stefan','Zespół Szkół Ekonomicznych w Opolu im. Stefana Row','Zespół szkół ekonomicznych w Opolu im.Stanislawa "','Zs Ekonomicznych','ZSE Ekonomicznych im. gen. Stefana Grota-Roweckieg','ZSEK ','ZSEK im Stefana Roweckiego Grot','ZSEk',
+'ZSEk Opole','ZSEk w Opolu','Zsek w Opolu (technikum nr.3)') ;
+
+3h
+
+
+
+SELECT
+wojewodztwo ,
+COUNT(pytanie3) AS `COUNT(pytanie3)`,
+(COUNT(pytanie3)/(SELECT COUNT(*) FROM ankieta WHERE wojewodztwo LIKE 'opolskie' )*100) AS `proc(pytanie1)`,
+pytanie1
+FROM ankieta
+GROUP BY wojewodztwo, pytanie1

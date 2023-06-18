@@ -1,0 +1,14 @@
+procedura sprawdzenia systemów
+
+1) mst
+2) nazwa servera
+	login:
+	hasło:
+3) info   (informacje o systemie)
+4) kopiujemy
+	nazwa systemu 
+	wersja
+5)ssms
+	sprawdzamy jakie bazy są na serverze
+	sprawdzamy ich werje
+	kopiujemy dane do excela 

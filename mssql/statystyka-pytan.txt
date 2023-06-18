@@ -1,0 +1,59 @@
+SELECT (COUNT(a.pytanie1)/(SELECT COUNT(*) FROM ankieta WHERE miejscowosc LIKE 'Opole' )*100) AS VALUE, COUNT(a.pytanie1) ,  a.pytanie1 AS pytanie1,a.miejscowosc from ankieta a 
+WHERE a.miejscowosc LIKE 'Opole'
+GROUP BY a.pytanie1, a.miejscowosc 
+ORDER BY COUNT(a.pytanie1) DESC;
+
+SELECT (COUNT(a.pytanie3)/(SELECT COUNT(*) FROM ankieta WHERE miejscowosc LIKE 'Opole' )*100) AS VALUE, COUNT(a.pytanie3) ,  a.pytanie1 AS pytanie3,a.miejscowosc from ankieta a 
+WHERE a.miejscowosc LIKE 'Opole'
+GROUP BY a.pytanie3, a.miejscowosc 
+ORDER BY COUNT(a.pytanie3) DESC;
+
+SELECT (COUNT(a.pytanie4)/(SELECT COUNT(*) FROM ankieta WHERE miejscowosc LIKE 'Opole' )*100) AS VALUE, COUNT(a.pytanie4) ,  a.pytanie4 AS pytanie4,a.miejscowosc from ankieta a 
+WHERE a.miejscowosc LIKE 'Opole'
+GROUP BY a.pytanie4, a.miejscowosc 
+ORDER BY COUNT(a.pytanie4) DESC;
+
+SELECT (COUNT(a.pytanie5)/(SELECT COUNT(*) FROM ankieta WHERE miejscowosc LIKE 'Opole' )*100) AS VALUE, COUNT(a.pytanie5) ,  a.pytanie5 AS pytanie5,a.miejscowosc from ankieta a 
+WHERE a.miejscowosc LIKE 'Opole'
+GROUP BY a.pytanie5, a.miejscowosc 
+ORDER BY COUNT(a.pytanie5) DESC;
+
+SELECT (COUNT(a.pytanie6)/(SELECT COUNT(*) FROM ankieta WHERE miejscowosc LIKE 'Opole' )*100) AS VALUE, COUNT(a.pytanie6) ,  a.pytanie6 AS pytanie6,a.miejscowosc from ankieta a 
+WHERE a.miejscowosc LIKE 'Opole'
+GROUP BY a.pytanie6, a.miejscowosc 
+ORDER BY COUNT(a.pytanie6) DESC;
+
+SELECT (COUNT(a.pytanie7)/(SELECT COUNT(*) FROM ankieta WHERE miejscowosc LIKE 'Opole' )*100) AS VALUE, COUNT(a.pytanie7) ,  a.pytanie7 AS pytanie7,a.miejscowosc from ankieta a 
+WHERE a.miejscowosc LIKE 'Opole'
+GROUP BY a.pytanie7, a.miejscowosc 
+ORDER BY COUNT(a.pytanie7) DESC;
+
+SELECT (COUNT(a.pytanie8)/(SELECT COUNT(*) FROM ankieta WHERE miejscowosc LIKE 'Opole' )*100) AS VALUE, COUNT(a.pytanie8) ,  a.pytanie8 AS pytanie8,a.miejscowosc from ankieta a 
+WHERE a.miejscowosc LIKE 'Opole'
+GROUP BY a.pytanie8, a.miejscowosc 
+ORDER BY COUNT(a.pytanie8) DESC;
+
+SELECT (COUNT(a.pytanie9)/(SELECT COUNT(*) FROM ankieta WHERE miejscowosc LIKE 'Opole' )*100) AS VALUE, COUNT(a.pytanie9) ,  a.pytanie9 AS pytanie9,a.miejscowosc from ankieta a 
+WHERE a.miejscowosc LIKE 'Opole'
+GROUP BY a.pytanie9, a.miejscowosc 
+ORDER BY COUNT(a.pytanie9) DESC;
+
+SELECT (COUNT(a.pytanie10)/(SELECT COUNT(*) FROM ankieta WHERE miejscowosc LIKE 'Opole' )*100) AS VALUE, COUNT(a.pytanie10) ,  a.pytanie10 AS pytanie10,a.miejscowosc from ankieta a 
+WHERE a.miejscowosc LIKE 'Opole'
+GROUP BY a.pytanie10, a.miejscowosc 
+ORDER BY COUNT(a.pytanie10) DESC;
+
+SELECT (COUNT(a.pytanie11)/(SELECT COUNT(*) FROM ankieta WHERE miejscowosc LIKE 'Opole' )*100) AS VALUE, COUNT(a.pytanie11) ,  a.pytanie11 AS pytanie11,a.miejscowosc from ankieta a 
+WHERE a.miejscowosc LIKE 'Opole'
+GROUP BY a.pytanie11, a.miejscowosc 
+ORDER BY COUNT(a.pytanie11) DESC;
+
+SELECT (COUNT(a.pytanie12)/(SELECT COUNT(*) FROM ankieta WHERE miejscowosc LIKE 'Opole' )*100) AS VALUE, COUNT(a.pytanie12) ,  a.pytanie12 AS pytanie12,a.miejscowosc from ankieta a 
+WHERE a.miejscowosc LIKE 'Opole'
+GROUP BY a.pytanie12, a.miejscowosc 
+ORDER BY COUNT(a.pytanie12) DESC;
+
+SELECT (COUNT(a.pytanie14)/(SELECT COUNT(*) FROM ankieta WHERE miejscowosc LIKE 'Opole' )*100) AS VALUE, COUNT(a.pytanie14) ,  a.pytanie14 AS pytanie14,a.miejscowosc from ankieta a 
+WHERE a.miejscowosc LIKE 'Opole'
+GROUP BY a.pytanie14, a.miejscowosc 
+ORDER BY COUNT(a.pytanie14) DESC;

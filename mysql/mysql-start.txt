@@ -1,0 +1,130 @@
+	cd /
+
+mkdir data
+
+cd /data
+
+mkdir data
+
+mcedit docker-compose.yml    {kopiować spacja do spacji}
+-----------------------------
+version: '3.7'
+
+services:
+
+  db:
+   image: mysql:8.0.19
+   ports:
+     - "3306:3306"
+   command: --default-authentication-plugin=mysql_native_password
+   volumes:
+     - ./data/mysql:/var/lib/mysql
+     - ./data/my.cnf:/etc/my.cnf
+   environment:
+      MYSQL_ROOT_PASSWORD: 'Haslo-user'
+
+--------------------------------------
+cd /data/data
+
+mkdir mysql
+
+mcedit my.cnf
+-----------------------------------------
+[mysqld]
+
+#
+# Remove leading # and set to the amount of RAM for the most important data
+# cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.
+ innodb_buffer_pool_size = 44G
+#
+# Remove the leading "# " to disable binary logging
+# Binary logging captures changes between backups and is enabled by
+# default. It's default setting is log_bin=binlog
+# disable_log_bin
+#
+# Remove leading # to set options mainly useful for reporting servers.
+# The server defaults are faster for transactions and fast SELECTs.
+# Adjust sizes as needed, experiment to find the optimal values.
+
+join_buffer_size = 128M
+sort_buffer_size = 20M
+read_rnd_buffer_size = 8M
+
+#
+# Remove leading # to revert to previous value for default_authentication_plugin,
+# this will increase compatibility with older clients. For background, see:
+# https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_default_authentication_plugin
+# default-authentication-plugin=mysql_native_password
+
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+
+#log-error=/var/log/mysqld.log
+
+[client]
+
+---------------------------------------------
+
+cd /var/lib
+
+mkdir mysql
+
+cd /var/lib/mysql
+
+touch mysql.sock
+
+-----------------------
+--mysql-docker-client--
+-----------------------
+
+wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.19-1.el7.x86_64.rpm-bundle.tar
+
+tar -xvf mysql-8.0.19-1.el7.x86_64.rpm-bundle.tar
+]
+yum remove mariadb-libs.x86_64 1:5.5.64-1.el7
+
+yum install mysql-community-common-8.0.19-1.el7.x86_64.rpm mysql-community-libs-8.0.19-1.el7.x86_64.rpm mysql-community-client-8.0.19-1.el7.x86_64.rpm
+
+
+yum install mysql-community-common-8.0.21-1.el8.x86_64.rpm mysql-community-libs-8.0.21-1.el8.x86_64.rpm mysql-community-client-8.0.21-1.el8.x86_64.rpm
+
+
+wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.21-1.el8.x86_64.rpm-bundle.tar
+tar -xvf mysql-8.0.21-1.el8.x86_64.rpm-bundle.tar
+
+yum install mysql-community-client-debuginfo-8.0.21-1.el8.x86_64.rpm mysql-community-server-debug-8.0.21-1.el8.x86_64.rpm mysql-community-debugsource-8.0.21-1.el8.x86_64.rpm mysql-community-test-8.0.21-1.el8.x86_64.rpm mysql-community-test-debuginfo-8.0.21-1.el8.x86_64.rpm mysql-community-common-8.0.21-1.el8.x86_64.rpm mysql-community-devel-8.0.21-1.el8.x86_64.rpm mysql-community-libs-8.0.21-1.el8.x86_64.rpm mysql-community-libs-debuginfo-8.0.21-1.el8.x86_64.rpm mysql-community-server-debug-debuginfo-8.0.21-1.el8.x86_64.rpm mysql-community-server-8.0.21-1.el8.x86_64.rpm mysql-community-client-8.0.21-1.el8.x86_64.rpm mysql-community-debuginfo-8.0.21-1.el8.x86_64.rpm mysql-community-server-debuginfo-8.0.21-1.el8.x86_64.rpm -y
+
+
+yum install \
+mysql-community-client-8.0.23-1.el8.x86_64.rpm \
+mysql-community-client-debuginfo-8.0.23-1.el8.x86_64.rpm \
+mysql-community-client-plugins-8.0.23-1.el8.x86_64.rpm \
+mysql-community-client-plugins-debuginfo-8.0.23-1.el8.x86_64.rpm \
+mysql-community-common-8.0.23-1.el8.x86_64.rpm \
+mysql-community-debuginfo-8.0.23-1.el8.x86_64.rpm \
+mysql-community-debugsource-8.0.23-1.el8.x86_64.rpm \
+mysql-community-devel-8.0.23-1.el8.x86_64.rpm \
+mysql-community-libs-8.0.23-1.el8.x86_64.rpm \
+mysql-community-libs-debuginfo-8.0.23-1.el8.x86_64.rpm \
+mysql-community-server-8.0.23-1.el8.x86_64.rpm \
+mysql-community-server-debug-8.0.23-1.el8.x86_64.rpm \
+mysql-community-server-debug-debuginfo-8.0.23-1.el8.x86_64.rpm \
+mysql-community-server-debuginfo-8.0.23-1.el8.x86_64.rpm \
+mysql-community-test-8.0.23-1.el8.x86_64.rpm \
+mysql-community-test-debuginfo-8.0.23-1.el8.x86_64.rpm
+
+systemctl start mysqld
+
+
+wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell-8.0.19-1.el7.x86_64.rpm
+
+yum install mysql-shell-8.0.19-1.el7.x86_64.rpm
+
+docker-compose up &
+
+
+//wejscie
+	 mysql -uroot -p -h127.0.0.1
+
+//wyjscie
+	\q

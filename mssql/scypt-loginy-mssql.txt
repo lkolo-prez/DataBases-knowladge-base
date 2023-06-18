@@ -1,0 +1,12 @@
+SELECT
+    @@SERVERNAME as servers,
+	DB_NAME(dbid) as DBName,  
+     loginame as LoginName,hostname as fromhost,
+ program_name
+FROM
+    sys.sysprocesses
+WHERE 
+    dbid > 0 and
+	loginame != 'sa' and
+ DB_NAME(dbid) != 'Northwind' and
+ program_name != 'Microsoft SQL Server Management Studio - Query'
